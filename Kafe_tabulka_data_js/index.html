@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drink Selection</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Drink Selection</h1>
+
+        <div class="person-selection">
+            <h3>Select Person:</h3>
+            <label><input type="radio" name="person" value="Masopust Lukáš" required> Masopust Lukáš</label><br>
+            <label><input type="radio" name="person" value="Molič Jan"> Molič Jan</label><br>
+            <label><input type="radio" name="person" value="Adamek Daniel"> Adamek Daniel</label><br>
+            <label><input type="radio" name="person" value="Weber David"> Weber David</label>
+        </div>
+
+        <div class="drink-selection">
+            <h3>Select Drinks:</h3>
+
+            <div class="drink-item">
+                <label for="milk">Mléko:</label>
+                <input type="range" id="milk" class="drink-slider" min="0" max="10" value="0" oninput="updateValue(this)">
+                <span class="drink-value" id="milkValue">0</span>
+            </div>
+
+            <div class="drink-item">
+                <label for="espresso">Espresso:</label>
+                <input type="range" id="espresso" class="drink-slider" min="0" max="10" value="0" oninput="updateValue(this)">
+                <span class="drink-value" id="espressoValue">0</span>
+            </div>
+
+            <div class="drink-item">
+                <label for="coffee">Coffe:</label>
+                <input type="range" id="coffee" class="drink-slider" min="0" max="10" value="0" oninput="updateValue(this)">
+                <span class="drink-value" id="coffeeValue">0</span>
+            </div>
+
+            <div class="drink-item">
+                <label for="long">Long:</label>
+                <input type="range" id="long" class="drink-slider" min="0" max="10" value="0" oninput="updateValue(this)">
+                <span class="drink-value" id="longValue">0</span>
+            </div>
+
+            <div class="drink-item">
+                <label for="doppio">Doppio:</label>
+                <input type="range" id="doppio" class="drink-slider" min="0" max="10" value="0" oninput="updateValue(this)">
+                <span class="drink-value" id="doppioValue">0</span>
+            </div>
+        </div>
+
+        <button class="submit-btn" onclick="submitForm()">Submit Drink Selection</button>
+
+        <h3>Submitted Selections</h3>
+        <div id="submittedData"></div> 
+
+        <h3>Totals for Each Person</h3>
+        <div id="totalsData"></div> 
+    </div>
+
+
+    
+    <h3>Monthly Overview of Drinks</h3>
+    <button id="fetchMonthlyOverview" class="submit-btn">Fetch Monthly Overview</button>
+
+    <table id="monthlyOverviewTable" style="margin-top: 20px; width: 100%;">
+        <thead>
+            <tr>
+                <th>Person</th>
+                <th>Drink</th>
+                <th>Quantity</th>
+            </tr>
+        </thead>
+        <tbody>
+       
+        </tbody>
+    </table>
+</div>
+
+<script src="js.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
